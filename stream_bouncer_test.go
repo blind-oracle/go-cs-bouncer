@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	csbouncer "github.com/crowdsecurity/go-cs-bouncer"
+	csbouncer "github.com/blind-oracle/go-cs-bouncer"
 )
 
 func ExampleStreamBouncer() {

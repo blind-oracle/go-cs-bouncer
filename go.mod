@@ -1,4 +1,4 @@
-module github.com/crowdsecurity/go-cs-bouncer
+module github.com/blind-oracle/go-cs-bouncer
 
 go 1.21
 

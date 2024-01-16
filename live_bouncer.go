@@ -75,10 +75,8 @@ func (b *LiveBouncer) Init() error {
 	return nil
 }
 
-func (b *LiveBouncer) Get(value string) (*models.GetDecisionsResponse, error) {
-	filter := apiclient.DecisionsListOpts{
-		IPEquals: &value,
-	}
+func (b *LiveBouncer) Get() (*models.GetDecisionsResponse, error) {
+	filter := apiclient.DecisionsListOpts{}
 
 	decision, resp, err := b.APIClient.Decisions.List(context.Background(), filter)
 	if err != nil {

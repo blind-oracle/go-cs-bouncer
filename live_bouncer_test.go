@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	csbouncer "github.com/crowdsecurity/go-cs-bouncer"
+	csbouncer "github.com/blind-oracle/go-cs-bouncer"
 )
 
 func ExampleLiveBouncer() {
@@ -17,15 +17,13 @@ func ExampleLiveBouncer() {
 		log.Fatalf(err.Error())
 	}
 
-	ipToQuery := "1.2.3.4"
-
-	response, err := bouncer.Get(ipToQuery)
+	response, err := bouncer.Get()
 	if err != nil {
-		log.Fatalf("unable to get decision for ip '%s' : '%s'", ipToQuery, err)
+		log.Fatalf("unable to get decisions: '%s'", err)
 	}
 
 	if len(*response) == 0 {
-		log.Printf("no decision for '%s'", ipToQuery)
+		log.Printf("no decision")
 	}
 
 	for _, decision := range *response {
@@ -45,15 +43,13 @@ func ExampleLiveBouncer_Config() {
 		log.Fatalf(err.Error())
 	}
 
-	ipToQuery := "1.2.3.4"
-
-	response, err := bouncer.Get(ipToQuery)
+	response, err := bouncer.Get()
 	if err != nil {
-		log.Fatalf("unable to get decision for ip '%s' : '%s'", ipToQuery, err)
+		log.Fatalf("unable to get decision: '%s'", err)
 	}
 
 	if len(*response) == 0 {
-		log.Printf("no decision for '%s'", ipToQuery)
+		log.Printf("no decision")
 	}
 
 	for _, decision := range *response {
