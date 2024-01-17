@@ -17,7 +17,7 @@ func ExampleLiveBouncer() {
 		log.Fatalf(err.Error())
 	}
 
-	response, err := bouncer.Get("ip", "ban")
+	response, err := bouncer.Get()
 	if err != nil {
 		log.Fatalf("unable to get decisions: '%s'", err)
 	}
@@ -43,7 +43,7 @@ func ExampleLiveBouncer_Config() {
 		log.Fatalf(err.Error())
 	}
 
-	response, err := bouncer.Get("ip", "ban")
+	response, err := bouncer.Get()
 	if err != nil {
 		log.Fatalf("unable to get decision: '%s'", err)
 	}
